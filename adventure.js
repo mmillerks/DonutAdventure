@@ -26,4 +26,32 @@ hero1.talkSass();
 hero1.announceHealth();
 hero1.fight();
         
-    
+
+//CREATE ENEMY
+
+class Enemy {
+    constructor(name, health, weapons){
+        this.enemyName = "enemyName";
+        this.enemyHealth = "enemyHealth";
+        this.enemyWeapons = "enemyWeapons";
+        this.enemyCatchPhrases = ['I\'m YouTube famous.', 'I\'m more dangerous than an uncovered sewer.'];
+    }
+    talkSmack(){
+        console.log(this.enemyCatchPhrases[Math.floor(Math.random() * this.enemyCatchPhrases.length)])
+    }
+    announceEnemyHealth(){
+        console.log(this.enemyHealth)
+    }
+    enemyFight(){
+        console.log("I\'m gonna flatten you like a slice of pepperoni.")
+    } 
+}
+
+const rat = new Enemy('Pizza Rat', 100, {
+    pepperoniStars: 5,
+    cheeseGrease: 10
+});
+
+rat.talkSmack();
+rat.announceEnemyHealth();
+rat.enemyFight();
