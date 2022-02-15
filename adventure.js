@@ -12,8 +12,10 @@ class Hero {
         announceHealth(){
             console.log(this.health)
         }
-        fight(){
-            console.log("I\'m ready to rumble.")
+        fight(enemy){
+            const arr = Object.keys(this.weapons)
+            return arr
+            //console.log("I\'m ready to rumble.")
         } 
 }
 
@@ -42,8 +44,11 @@ class Enemy {
     announceEnemyHealth(){
         console.log(this.enemyHealth)
     }
-    enemyFight(){
-        console.log("I\'m gonna flatten you like a slice of pepperoni.")
+    enemyFight(enemy){
+        const arr1 = Object.keys(this.enemyWeapons)
+        return arr1
+        //I'm pretty sure something isn't right here, but I'm not sure what...
+        //console.log("I\'m gonna flatten you like a slice of pepperoni.")
     } 
 }
 
@@ -55,3 +60,40 @@ const rat = new Enemy('Pizza Rat', 100, {
 rat.talkSmack();
 rat.announceEnemyHealth();
 rat.enemyFight();
+
+
+//WALKING DOWN THE STREET
+
+console.log(hero1.talkSass());
+
+console.log(rat.talkSmack());
+
+console.log(hero1.announceHealth());
+
+console.log(rat.announceEnemyHealth());
+
+
+//FIGHT
+
+//Using the hitpoints from the weapon they're using, subtract that amount from the enemy's health (i.e. If Dougie fights Pizza Rat using sprinkleSpray, subtract sprinkleSpray's hitpoint value (5) from Pizza Rat's health)
+//I think I need an if statement????
+
+//if springSpray => subtract 5 hitpoints from rat.enemyHealth
+//but if sugarShack => subtract 10 hitpoints from rat.enemyHeath
+
+
+
+//Console log the enemy name and their new health value (i.e. 'Dougie got hit by pepperoniStars! His health is now at 95!')
+console.log(rat.name + ' got hit by ' + rat.enemyWeapons + ' ! ' + "His health is now at " + hero1.health + '!');
+//I realize that there is more than one enemy weapon, but I'm not sure how to tell it specify the weapon that was used.
+
+
+//Have Pizza Rat fight Dougie
+console.log(rat.enemyFight());
+
+//Have Dougie fight Pizza Rat
+console.log(hero1.fight());
+
+//Have Pizza Rat and Dougie both announceHealth to make sure their health has decreased!
+console.log(rat.announceEnemyHealth());
+console.log(hero1.announceHealth());
